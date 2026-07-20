@@ -1,0 +1,105 @@
+{
+  "name": "Section 1 - Academy Registration",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e56e5497-9195-40c2-88b2-9c3f640b8e0a",
+      "name": "TriggerManual"
+    },
+    {
+      "parameters": {
+        "url": "https://learn.app.n8n.cloud/webhook/course/foundations/register",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "assessment_id",
+              "value": "e557ffc83063592a27fa342e09547de0"
+            },
+            {
+              "name": "workflow_name",
+              "value": "Section 1 - Academy Registration"
+            },
+            {
+              "name": "tag",
+              "value": "foundations-course"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "49d9357c-8f2f-4be5-9de9-de0faeeeadb7",
+      "name": "SubmitRegistration",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "AHQUkUCVMDhKfCtw",
+          "name": "n8n Academy API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Academy Registration Workflow\nCreated by: Dipendra Shekhawat\nDate: 25-06-2026\n\nThis workflow registers my n8n instance with the\nn8n Academy training system. It sends my assessment ID\nand workflow info to the Academy API.\n\nPart of: N8N101 Course, Section 1",
+        "height": 272,
+        "width": 896,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -272,
+        -304
+      ],
+      "typeVersion": 1,
+      "id": "553d6783-ccbe-454f-8ba4-900b689e2a21",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "TriggerManual": {
+      "main": [
+        [
+          {
+            "node": "SubmitRegistration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "1128a975-5c18-4654-a6a8-88f2a83fd8c3",
+  "meta": {
+    "instanceId": "ed2d39e2781eafdd6da0665310f4fa7731b7bb1ca7b344a403bf453731aa052b"
+  },
+  "nodeGroups": [],
+  "id": "bmHOVAd4ziWexPyG",
+  "tags": [
+    {
+      "updatedAt": "2026-06-24T13:19:31.274Z",
+      "createdAt": "2026-06-24T13:19:31.274Z",
+      "id": "8uSo4OUTzqufm2jB",
+      "name": "n8n101-course"
+    }
+  ]
+}
